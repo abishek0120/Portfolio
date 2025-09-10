@@ -1,0 +1,801 @@
+/* === Palette 3: Mauve & Gold === */
+:root {
+    --primary-color: #7e22ce;  /* Purple/Mauve */
+    --secondary-color: #9333ea;/* Lighter Purple */
+    --accent-color: #d97706;   /* Rich Gold/Amber */
+
+    --dark-color: #171717;     /* Neutral Dark */
+    --light-color: #f5f3ff;    /* Lavender White */
+    --gray-color: #737373;     /* Neutral Gray */
+
+    --success-color: #16a34a;  /* Green */
+    --warning-color: #f59e0b;  /* Amber */
+    --error-color: #be123c;    /* Rose Red */
+    --transition: all 0.3s ease;
+}
+
+.dark-mode {
+    --bg-color: #171717;       /* Dark Neutral */
+    --text-color: #f5f5f5;     /* Light Gray */
+    --card-bg: #262626;        /* Lighter Dark Neutral */
+    --nav-bg: #1f1f1f;         /* Darker variant */
+    --border-color: #404040;   /* Subtle border */
+}
+
+.light-mode {
+    --bg-color: #f5f3ff;       /* Light Lavender */
+    --text-color: #171717;     /* Dark Neutral */
+    --card-bg: #ffffff;        /* White */
+    --nav-bg: #ffffff;         /* White */
+    --border-color: #e5e7eb;   /* Subtle Light Border */
+}
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        .monospace {
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* Navigation */
+#omni-nav {
+    position: fixed;
+    top: 100px;
+    right: 120px;
+    z-index: 9999;
+}
+
+/* The Main Trigger Button */
+#omni-trigger {
+    /* ADJUSTMENT: Increased size for better visuals */
+    width: 70px;
+    height: 70px;
+    background: #111; /* Dark background for the image to pop */ /* Bright green border */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    /* ADJUSTMENT: Added box-shadow to the transition for the glow effect */
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.3s ease;
+}
+
+/* NEW: Green glow shadow on hover */
+#omni-trigger:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px 5px rgba(0, 255, 0, 0.7);
+}
+
+/* NEW: Styling for the Omnitrix image inside the button */
+.omni-image {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* The Circular Menu Container */
+#omni-menu {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Individual Menu Items */
+.omni-item {
+    position: absolute;
+    /* ADJUSTMENT: Centered based on new 70px trigger size */
+    top: -35px;
+    left: -35px;
+    width: 70px;
+    height: 70px;
+    transition: all 0.4s ease;
+    transition-delay: calc(0.05s * var(--i));
+}
+
+.omni-item a, .omni-item .theme-switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: var(--card-bg);
+    border-radius: 50%;
+    color: var(--primary-color);
+    text-decoration: none;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.omni-item a:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Tooltip on hover */
+.omni-item::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    top: -35px;
+    transform: translateX(-50%);
+    background: var(--dark-color);
+    color: var(--light-color);
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.omni-item:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- ACTIVE STATE (When Menu is Open) --- */
+
+#omni-nav.active #omni-trigger {
+    transform: scale(0.9);
+    box-shadow: 0 0 30px 8px rgba(0, 255, 0, 0.8); /* Intense glow when active */
+}
+
+#omni-nav.active .omni-image {
+    transform: rotate(180deg); /* Spin the image */
+}
+
+#omni-nav.active #omni-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+#omni-nav.active .omni-item {
+    /* ADJUSTMENT: Increased distance for the larger button */
+    transform: rotate(calc(360deg / 6 * var(--i))) translateY(-130px);
+}
+
+/* --- Special styling for the theme switcher --- */
+.theme-switcher-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.theme-switcher-item .slider {
+    background-color: var(--border-color);
+}
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(76, 70, 182, 0.1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        .hero-cta {
+            margin-top: 30px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* About Section */
+        .profile-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Projects Section */
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .tech-tag {
+            background-color: rgba(108, 99, 255, 0.1);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+/* === New Skills Section Styling === */
+
+/* Grid layout for the skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Individual skill circle container */
+.skill-circle {
+    text-align: center;
+    transition: var(--transition);
+}
+
+.skill-circle-inner {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.skill-svg {
+    width: 120px;
+    height: 120px;
+    transform: rotate(-90deg); /* Start the circle from the top */
+}
+
+/* The background track of the circle */
+.skill-bg-circle {
+    fill: none;
+    stroke: var(--border-color);
+    stroke-width: 8;
+}
+
+/* The progress indicator circumference */
+.skill-progress-circle {
+    fill: none;
+    stroke: var(--primary-color);
+    stroke-width: 8;
+    stroke-linecap: round; /* Makes the line ends round */
+    stroke-dasharray: 283; /* Circumference of a circle with r=45 (2 * PI * 45) */
+    stroke-dashoffset: 283; /* Hides the progress line initially */
+    transition: stroke-dashoffset 1.5s ease-in-out;
+}
+
+/* Text inside the circle */
+.skill-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-color);
+}
+
+.skill-percent {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Skill name below the circle */
+.skill-name {
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--gray-color);
+}
+
+/* --- Hover Effects --- */
+.skill-circle:hover .skill-circle-inner {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.skill-circle:hover .skill-progress-circle {
+    stroke: var(--secondary-color); /* Change color on hover */
+}
+
+.skill-circle:hover .skill-name {
+    color: var(--primary-color);
+}
+        /* Achievements Section */
+        .achievement-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .achievement-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Gallery Section */
+        .gallery-container {
+            position: relative;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        /* Contact Section */
+.contact-info {
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: var(--text-color); /* ensures text follows theme */
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--card-bg); /* adapts to dark/light */
+    color: var(--text-color);         /* adapts to dark/light */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    border: 1px solid var(--border-color); /* optional, theme-friendly border */
+}
+
+
+        /* Footer */
+        footer {
+            background-color: var(--nav-bg);
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(108, 99, 255, 0.1);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Dark Mode Toggle */
+        .theme-switch-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-switch {
+            display: inline-block;
+            position: relative;
+            width: 60px;
+            height: 34px;
+            margin: 0 10px;
+        }
+
+        .theme-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Custom Cursor */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: all 0.2s ease-out;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Utility Classes */
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+        /* Override Bootstrap colors with your variables */
+.btn-primary,
+.btn-outline-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #fff !important;
+}
+
+.bg-light {
+    background-color: var(--bg-color) !important;
+}
+
+.text-dark,
+.text-light {
+    color: var(--text-color) !important;
+}
+
+.navbar {
+    background-color: var(--nav-bg) !important;
+    color: var(--text-color) !important;
+}
+.section-bg {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+.section-bg .section-title::after {
+    background-color: var(--primary-color);
+}
+
+/* education and experience timeline */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 50px auto;
+}
+
+/* The central vertical line of the timeline */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: var(--border-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+}
+
+/* Container for each timeline entry */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+/* The circular icon on the timeline line */
+.timeline-item .timeline-icon {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: -8px;
+    top: 28px;
+    background-color: var(--primary-color);
+    border: 3px solid var(--bg-color);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+/* Positioning items on the left side */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 70px;
+}
+
+/* Positioning items on the right side */
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 70px;
+}
+
+/* Adjust icon position for right-side items */
+.timeline-item:nth-child(even) .timeline-icon {
+    left: -8px;
+}
+
+/* The main content box */
+.timeline-content {
+    padding: 20px 25px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.timeline-date {
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.timeline-title {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+    color: var(--text-color);
+}
+
+.timeline-subtitle {
+    font-weight: 500;
+    color: var(--gray-color);
+    margin-bottom: 10px;
+}
+
+.timeline-details, .timeline-details li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+.timeline-details ul {
+    padding-left: 20px;
+}
+.timeline-details li {
+    margin-bottom: 5px;
+}
+
+/* === Media Query for Responsiveness === */
+@media screen and (max-width: 768px) {
+    /* Hide the central line on small screens */
+    .timeline::after {
+        left: 20px;
+    }
+
+    /* Make all items full-width and stack them */
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 15px;
+    }
+    
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    /* Move the icon to the left for all items */
+    .timeline-item .timeline-icon {
+        left: 12px;
+    }
+}
