@@ -768,7 +768,7 @@ footer {
     width: 8px;
     height: 8px;
     /* background-color: var(--primary-color); */
-    background-color: white;
+    background-color: tomato;
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
@@ -779,7 +779,7 @@ footer {
 .cursor-outline {
     width: 40px;
     height: 40px;
-    border: 2px solid white;
+    border: 2px solid tomato;
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
