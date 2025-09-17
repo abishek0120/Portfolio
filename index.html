@@ -1,351 +1,1037 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abishek BV | Python & Django Developer</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="light-mode">
-    <!-- Custom Cursor -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abishek BV | Python Developer</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="light-mode">
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
-    <!-- Navigation -->
-<nav id="omni-nav">
-    <div id="omni-trigger">
-        <img src="assets/images/Ben_10_Omnitrix.png" alt="Omnitrix Navigator" class="omni-image">
-        
+    <div id="theme-controls">
+      <button
+        id="light-mode-btn"
+        class="theme-btn active"
+        data-tooltip="Light Mode"
+      >
+        <i class="fas fa-sun"></i>
+      </button>
+      <button id="dark-mode-btn" class="theme-btn" data-tooltip="Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
     </div>
 
-    <ul id="omni-menu">
-        <li class="omni-item" style="--i:0;" data-tooltip="Home">
-            <a href="#hero">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-            </a>
+    <nav id="omni-nav">
+      <div id="omni-trigger">
+        <img
+          src="assets/images/Ben_10_Omnitrix.png"
+          alt="Omnitrix Navigator"
+          class="omni-image"
+        />
+      </div>
+
+      <ul id="omni-menu">
+        <li class="omni-item" style="--i: 0" data-tooltip="Home">
+          <a href="#hero">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </a>
         </li>
-        <li class="omni-item" style="--i:1;" data-tooltip="About">
-            <a href="#about">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            </a>
+        <li class="omni-item" style="--i: 1" data-tooltip="About">
+          <a href="#about">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </a>
         </li>
-        <li class="omni-item" style="--i:2;" data-tooltip="Experience">
-            <a href="#experience">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-            </a>
+        <li class="omni-item" style="--i: 2" data-tooltip="Gallery">
+          <a href="#gallery">
+            <!-- === NEW SVG ICON FOR GALLERY === -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+          </a>
         </li>
-        <li class="omni-item" style="--i:3;" data-tooltip="Skills">
-            <a href="#skills">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-            </a>
+        <li class="omni-item" style="--i: 3" data-tooltip="Skills">
+          <a href="#skills">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </a>
         </li>
-        <li class="omni-item" style="--i:4;" data-tooltip="Contact">
-            <a href="#contact">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            </a>
+        <li class="omni-item" style="--i: 4" data-tooltip="Contact">
+          <a href="#contact">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              ></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
         </li>
-        <li class="omni-item theme-switcher-item" style="--i:5;" data-tooltip="Theme">
-             <label class="theme-switch" for="checkbox">
-                <input type="checkbox" id="checkbox" />
-                <div class="slider"></div>
-            </label>
-        </li>
-    </ul>
-</nav>
-    <!-- Hero Section -->
+      </ul>
+    </nav>
     <section id="hero" class="section-bg">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 hero-content">
-                    <h1 class="hero-title fade-in">Hi, I'm <span class="text-primary">Abishek BV</span></h1>
-                    <h2 class="hero-subtitle fade-in delay-1">Python & Django Developer</h2>
-                    <p class="fade-in delay-2">I build robust and scalable web applications with modern technologies. Currently pursuing Computer Science at Sathyabama University.</p>
-                    <div class="hero-cta fade-in delay-3">
-                        <a href="#projects" class="btn btn-primary me-2">View My Work</a>
-                        <a href="#contact" class="btn btn-outline-primary">Contact Me</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-none d-lg-block">
-                    <div class="text-center">
-                        <div class="profile-img-container">
-                            <img src="https://placehold.co/400x500/6c63ff/FFFFFF?text=Abishek+BV" alt="Abishek BV" class="profile-img">
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 hero-content">
+            <h1 class="hero-title fade-in">
+              Hi, I'm <span class="text-primary">Abishek BV</span>
+            </h1>
+
+            <h2 class="hero-subtitle fade-in delay-1">
+              I am a <span class="typing-text"></span>
+            </h2>
+
+            <p class="fade-in delay-3">
+              I build robust and scalable web applications with modern
+              technologies. Currently pursuing Computer Science at Sathyabama
+              University.
+            </p>
+
+            <div class="hero-cta fade-in delay-4">
+              <a href="#projects" class="btn btn-primary me-2">View My Work</a>
+              <a href="#contact" class="btn btn-outline-primary">Contact Me</a>
+              <a href="assets/images/Abishek bv.pdf" download="Abishek_BV_Resume.pdf" class="btn btn-primary mt-4"
+              ><i class="fas fa-download me-2"></i>Download Resume</a
+            >
             </div>
+          </div>
+
+          <div class="col-lg-6 d-none d-lg-block">
+            <div class="text-center">
+              <div class="profile-img-container">
+                <img
+                  src="assets\images\me.png"
+                  alt="Abishek BV"
+                  class="profile-img"
+                />
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="section-bg">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="row">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="https://placehold.co/400x500/4c46b6/FFFFFF?text=Profile" alt="Abishek BV" class="profile-img">
-                </div>
-                <div class="col-lg-8">
-                    <h3 class="mb-4">A Passionate Developer from India</h3>
-                    <p>Hello! I'm Abishek BV, a Computer Science student at Sathyabama University with a strong passion for backend development and building web applications that make a difference.</p>
-                    <p>My journey in programming started with Python, and I quickly fell in love with its simplicity and power. I specialize in Django and Django REST Framework, creating robust and scalable backend systems.</p>
-                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or enjoying my other hobbies like photography and sports.</p>
-                    <div class="row mt-5">
-                        <div class="col-md-6">
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><strong>Name:</strong> Abishek BV</li>
-                                <li class="mb-2"><strong>Email:</strong> abishek@example.com</li>
-                                <li class="mb-2"><strong>Location:</strong> Chennai, India</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><strong>Education:</strong> B.Tech Computer Science</li>
-                                <li class="mb-2"><strong>University:</strong> Sathyabama University</li>
-                                <li class="mb-2"><strong>Freelance:</strong> Available</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+              src="assets\images\abishek.jpeg"
+              alt="Abishek BV"
+              class="profile-img"
+              style="width: 100%; max-width: 400px; height: 100%; max-height: fit-content;"
+            />
+          </div>
+          <div class="col-lg-8">
+            <h3 class="mb-4">
+              Curious Developer & Lifelong Learner
+            </h3>
+            <p>
+              Hi, I'm <strong>Abishek BV</strong>, a Computer Science student at
+              Sathyabama University who loves building clean, scalable backend
+              systems and impactful web applications. I began with Python and
+              quickly moved into Django and Django REST Framework, where I found
+              my passion for robust backend development.
+            </p>
+            <p>
+              Away from the keyboard, I’m an avid swimmer—my favorite stroke is
+              the butterfly—and a keen football player. I draw huge inspiration
+              from my sporting idols: <strong style="color: blueviolet;">Cristiano Ronaldo</strong>, whose
+              relentless discipline and never-give-up mindset fuel my own drive,
+              and <strong style="color: blueviolet;">Michael Phelps</strong>, whose record-breaking
+              dedication motivates me to push limits in and out of the pool.
+            </p>
+            <p>
+              Whether I’m crafting APIs, chasing a football on the field, or
+              powering through laps in the water, I bring the same focus,
+              curiosity, and commitment to growth that my heroes embody.
+            </p>
 
-    <!-- Projects Section -->
+            <div class="row mt-5">
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-2"><strong>Name:</strong> Abishek BV</li>
+                  <li class="mb-2">
+                    <strong>Email:</strong> tstark0120@gmail.com
+                  </li>
+                  <li class="mb-2">
+                    <strong>Location:</strong> Cuddalore,Tamil Nadu
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <strong>Education:</strong> B.E Computer Science
+                  </li>
+                  <li class="mb-2">
+                    <strong>University:</strong> Sathyabama University
+                  </li>
+                  <li class="mb-2"><strong>Freelance:</strong > Available</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section id="projects" class="section-bg">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="row">
-                <!-- Project 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="project-card">
-                        <img src="https://placehold.co/400x300/6c63ff/FFFFFF?text=E-Commerce+API" alt="E-Commerce API" class="project-img">
-                        <div class="project-content">
-                            <h3 class="project-title">E-Commerce Backend API</h3>
-                            <p>A complete e-commerce backend built with Django REST Framework featuring user authentication, product management, and payment integration.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Django</span>
-                                <span class="tech-tag">DRF</span>
-                                <span class="tech-tag">PostgreSQL</span>
-                                <span class="tech-tag">Stripe API</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="btn btn-sm btn-outline-primary me-2">Live Demo</a>
-                                <a href="#" class="btn btn-sm btn-primary">Source Code</a>
-                            </div>
-                        </div>
-                    </div>
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="row">
+          <!-- Project 1 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <img
+                src="assets\images\event.png"
+                alt="Evently"
+                class="project-img"
+              />
+              <div class="project-content">
+                <h3 class="project-title">Sathyabama-Event Management</h3>
+                <p>
+                  A complete Event Management System backend built with
+                  <strong>Django and Javascript</strong> featuring user
+                  authentication, QR code attendance, and calender integration.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Django</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                  <span class="tech-tag">Stripe API</span>
                 </div>
-                
+                <div class="project-links">
+                  <a
+                    href="https://event-management-system-mwhu.onrender.com/"
+                    target="_blank"
+                    class="btn btn-sm btn-outline-primary me-2"
+                    >Live Demo</a
+                  >
+                  <a
+                    href="https://github.com/abishek0120/Event-management-system/tree/master"
+                    target="_blank"
+                    class="btn btn-sm btn-primary"
+                    >Source Code</a
+                  >
+                </div>
+              </div>
             </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <img
+                src="assets\images\screenshot (74).png"
+                alt="Real-Time Chat App"
+                class="project-img"
+              />
+              <div class="project-content">
+                <h3 class="project-title">Real-Time Chat App</h3>
+                <p>
+                  WebSocket-based chat using Django Channels and
+                  JQuery(javascript) with features like room creation, typing
+                  indicators.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Django Channels</span>
+                  <span class="tech-tag">JQuery Javascript</span>
+                  <span class="tech-tag">WebSockets</span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/abishek0120/chat_django"
+                    target="_blank"
+                    class="btn btn-sm btn-primary"
+                    >Source Code</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <img
+                src="assets/images/Screenshot (33).png"
+                alt="AI Resume Builder"
+                class="project-img"
+              />
+              <div class="project-content">
+                <h3 class="project-title">Resume Builder</h3>
+                <p>
+                  Interactive resume builder with using Flask and Javascript As
+                  my Professional training project 1.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Django</span>
+                  <span class="tech-tag">Javascript</span>
+                  <span class="tech-tag">MySQL</span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/abishek0120/Resume-Builder"
+                    class="btn btn-sm btn-primary"
+                    target="_blank"
+                    >Source Code</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <img
+                src="assets/images/screenshot (72).png"
+                alt="Data Dashboard"
+                class="project-img"
+              />
+              <div class="project-content">
+                <h3 class="project-title">
+                  Cine Match (movie recomdation system)
+                </h3>
+                <p>
+                  Movie recomending dashboard that Uses machine learning model
+                  to find the best movie to watch next
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Django</span>
+                  <span class="tech-tag">Scikit-learn</span>
+                  <span class="tech-tag">Pandas</span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/abishek0120/movie_recomender_ml_django"
+                    class="btn btn-sm btn-primary"
+                    >Source Code</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <img
+                src="assets/images/screenshot (77).png"
+                alt="Data Dashboard"
+                class="project-img"
+              />
+              <div class="project-content">
+                <h3 class="project-title">Space Shooter - Pygame</h3>
+                <p>
+                  I have created a space game as my personal project with Pygame
+                  and physics
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Pygame</span>
+                  <span class="tech-tag">Physics</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <img
+                src="assets/images/Screenshot (76).png"
+                alt="Portfolio Website"
+                class="project-img"
+              />
+              <div class="project-content">
+                <h3 class="project-title">Spoty Music webiste</h3>
+                <p>
+                  A Music app built with modern CSS, animations, and custom
+                  JavaScript for Spotify API.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Flask</span>
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/abishek0120/music_app_flask"
+                    class="btn btn-sm btn-primary"
+                    >Source Code</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-   <!-- Skills Section -->
-<section id="skills" class="section-bg">
-    <div class="container">
+    <section id="skills" class="section-bg">
+      <div class="container">
         <h2 class="section-title">Skills</h2>
         <p class="section-subtitle">My Technical Proficiency</p>
 
         <div class="skills-grid">
-            <div class="skill-circle" data-skill="90">
-                <div class="skill-circle-inner">
-                    <svg class="skill-svg" viewBox="0 0 100 100">
-                        <circle class="skill-bg-circle" cx="50" cy="50" r="45"></circle>
-                        <circle class="skill-progress-circle" cx="50" cy="50" r="45"></circle>
-                    </svg>
-                    <div class="skill-info">
-                        <span class="skill-percent">0%</span>
-                    </div>
-                </div>
-                <h3 class="skill-name">Python</h3>
+          <!-- Skill 1 -->
+          <div class="skill-circle" data-skill="90">
+            <div class="skill-circle-inner">
+              <svg class="skill-svg" viewBox="0 0 100 100">
+                <circle class="skill-bg-circle" cx="50" cy="50" r="45"></circle>
+                <circle
+                  class="skill-progress-circle"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                ></circle>
+              </svg>
+              <div class="skill-info">
+                <span class="skill-percent">0%</span>
+              </div>
             </div>
-            
-            </div>
-    </div>
-</section>
+            <h3 class="skill-name">Python</h3>
+          </div>
 
-<section id="experience" class="section-bg">
-    <div class="container">
+          <!-- Skill 2 -->
+          <div class="skill-circle" data-skill="85">
+            <div class="skill-circle-inner">
+              <svg class="skill-svg" viewBox="0 0 100 100">
+                <circle class="skill-bg-circle" cx="50" cy="50" r="45"></circle>
+                <circle
+                  class="skill-progress-circle"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                ></circle>
+              </svg>
+              <div class="skill-info">
+                <span class="skill-percent">0%</span>
+              </div>
+            </div>
+            <h3 class="skill-name">Django</h3>
+          </div>
+
+          <!-- Skill 3 -->
+          <div class="skill-circle" data-skill="65">
+            <div class="skill-circle-inner">
+              <svg class="skill-svg" viewBox="0 0 100 100">
+                <circle class="skill-bg-circle" cx="50" cy="50" r="45"></circle>
+                <circle
+                  class="skill-progress-circle"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                ></circle>
+              </svg>
+              <div class="skill-info">
+                <span class="skill-percent">0%</span>
+              </div>
+            </div>
+            <h3 class="skill-name">JavaScript</h3>
+          </div>
+
+          <div class="skill-circle" data-skill="75">
+            <div class="skill-circle-inner">
+              <svg class="skill-svg" viewBox="0 0 100 100">
+                <circle class="skill-bg-circle" cx="50" cy="50" r="45"></circle>
+                <circle
+                  class="skill-progress-circle"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                ></circle>
+              </svg>
+              <div class="skill-info">
+                <span class="skill-percent">0%</span>
+              </div>
+            </div>
+            <h3 class="skill-name">Flask</h3>
+          </div>
+
+          <div class="skill-circle" data-skill="70">
+            <div class="skill-circle-inner">
+              <svg class="skill-svg" viewBox="0 0 100 100">
+                <circle class="skill-bg-circle" cx="50" cy="50" r="45"></circle>
+                <circle
+                  class="skill-progress-circle"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                ></circle>
+              </svg>
+              <div class="skill-info">
+                <span class="skill-percent">0%</span>
+              </div>
+            </div>
+            <h3 class="skill-name">Numpy</h3>
+          </div>
+
+          <div class="skill-circle" data-skill="80">
+            <div class="skill-circle-inner">
+              <svg class="skill-svg" viewBox="0 0 100 100">
+                <circle class="skill-bg-circle" cx="50" cy="50" r="45"></circle>
+                <circle
+                  class="skill-progress-circle"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                ></circle>
+              </svg>
+              <div class="skill-info">
+                <span class="skill-percent">0%</span>
+              </div>
+            </div>
+            <h3 class="skill-name">Pandas</h3>
+          </div>
+
+          <div class="skill-circle" data-skill="70">
+            <div class="skill-circle-inner">
+              <svg class="skill-svg" viewBox="0 0 100 100">
+                <circle class="skill-bg-circle" cx="50" cy="50" r="45"></circle>
+                <circle
+                  class="skill-progress-circle"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                ></circle>
+              </svg>
+              <div class="skill-info">
+                <span class="skill-percent">0%</span>
+              </div>
+            </div>
+            <h3 class="skill-name">Matplotlib</h3>
+          </div>
+
+          <div class="skill-circle" data-skill="90">
+            <div class="skill-circle-inner">
+              <svg class="skill-svg" viewBox="0 0 100 100">
+                <circle class="skill-bg-circle" cx="50" cy="50" r="45"></circle>
+                <circle
+                  class="skill-progress-circle"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                ></circle>
+              </svg>
+              <div class="skill-info">
+                <span class="skill-percent">0%</span>
+              </div>
+            </div>
+            <h3 class="skill-name">Rest-Api</h3>
+          </div>
+          <div class="skill-circle" data-skill="70">
+            <div class="skill-circle-inner">
+              <svg class="skill-svg" viewBox="0 0 100 100">
+                <circle class="skill-bg-circle" cx="50" cy="50" r="45"></circle>
+                <circle
+                  class="skill-progress-circle"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                ></circle>
+              </svg>
+              <div class="skill-info">
+                <span class="skill-percent">0%</span>
+              </div>
+            </div>
+            <h3 class="skill-name">Git</h3>
+          </div>
+
+          <div class="skill-circle" data-skill="80">
+            <div class="skill-circle-inner">
+              <svg class="skill-svg" viewBox="0 0 100 100">
+                <circle class="skill-bg-circle" cx="50" cy="50" r="45"></circle>
+                <circle
+                  class="skill-progress-circle"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                ></circle>
+              </svg>
+              <div class="skill-info">
+                <span class="skill-percent">0%</span>
+              </div>
+            </div>
+            <h3 class="skill-name">Ms Excel</h3>
+          </div>
+
+          <div class="skill-circle" data-skill="90">
+            <div class="skill-circle-inner">
+              <svg class="skill-svg" viewBox="0 0 100 100">
+                <circle class="skill-bg-circle" cx="50" cy="50" r="45"></circle>
+                <circle
+                  class="skill-progress-circle"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                ></circle>
+              </svg>
+              <div class="skill-info">
+                <span class="skill-percent">0%</span>
+              </div>
+            </div>
+            <h3 class="skill-name">Tkinter</h3>
+          </div>
+
+          <div class="skill-circle" data-skill="95">
+            <div class="skill-circle-inner">
+              <svg class="skill-svg" viewBox="0 0 100 100">
+                <circle class="skill-bg-circle" cx="50" cy="50" r="45"></circle>
+                <circle
+                  class="skill-progress-circle"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                ></circle>
+              </svg>
+              <div class="skill-info">
+                <span class="skill-percent">0%</span>
+              </div>
+            </div>
+            <h3 class="skill-name">Mongo DB</h3>
+          </div>
+
+          <div class="skill-circle" data-skill="95">
+            <div class="skill-circle-inner">
+              <svg class="skill-svg" viewBox="0 0 100 100">
+                <circle class="skill-bg-circle" cx="50" cy="50" r="45"></circle>
+                <circle
+                  class="skill-progress-circle"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                ></circle>
+              </svg>
+              <div class="skill-info">
+                <span class="skill-percent">0%</span>
+              </div>
+            </div>
+            <h3 class="skill-name">PostgreSQL/MySQL</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section-bg">
+      <div class="container">
         <h2 class="section-title">Work Experience</h2>
         <p class="section-subtitle">My Professional Journey</p>
-
         <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-icon"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Jun 2024 - Aug 2024</span>
-                    <h3 class="timeline-title">Backend Developer Intern</h3>
-                    <p class="timeline-subtitle">Tech Solutions Inc.</p>
-                    <ul class="timeline-details">
-                        <li>Developed and maintained RESTful APIs using <strong>Python</strong> and <strong>Django REST Framework</strong> for a client-facing application.</li>
-                        <li>Optimized database queries in <strong>PostgreSQL</strong>, resulting in a 15% improvement in API response times.</li>
-                        <li>Wrote unit tests to ensure code quality and collaborated with the team using Git and Agile methodologies.</li>
-                    </ul>
-                </div>
+          <div class="timeline-item">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Jun 2024 - Aug 2024</span>
+              <h3 class="timeline-title">Backend Developer</h3>
+              <p class="timeline-subtitle">nXthive Technologies.</p>
+              <ul class="timeline-details">
+                <li>
+                  Developed and maintained RESTful APIs using
+                  <strong>Python</strong> and
+                  <strong>Django REST Framework</strong> for a client-facing
+                  application.
+                </li>
+                <li>
+                  Optimized database queries in <strong>PostgreSQL</strong>,
+                  resulting in a 15% improvement in API response times.
+                </li>
+                <li>
+                  integration of <strong>OAuth2</strong> authentication and
+                  Email integration for OTP
+                </li>
+                <li>
+                  Wrote unit tests to ensure code quality and collaborated with
+                  the team using Git
+                </li>
+              </ul>
             </div>
-
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-    <!-- Achievements Section -->
     <section id="achievements" class="section-bg">
-        <div class="container">
-            <h2 class="section-title">Achievements & Certifications</h2>
-            <div class="row">
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <h3>Hackathon Winner</h3>
-                        <p>Won first place in Sathyabama University's Annual Coding Hackathon 2023 for developing an innovative e-learning platform.</p>
-                    </div>
-                </div>
-                
+      <div class="container">
+        <h2 class="section-title">Achievements & Certifications</h2>
+        <div class="row">
+          <!-- Achievement 1 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <h3>Swimming</h3>
+              <p>
+                Earned numerous medals and trophies in swimming competitions,
+                specializing in the butterfly stroke. Recognized for speed.
+              </p>
             </div>
+          </div>
+
+          <!-- Achievement 2 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h3>Python Nptel Certificate</h3>
+              <p>
+                Earned the Python Professional Certificate from Nptel for joy of
+                computing in python.
+              </p>
+            </div>
+          </div>
+
+          <!-- Achievement 3 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <h3>Smart india Hackathon Participation</h3>
+              <p>
+                Worked as the <strong>Backend Developer (Python)</strong> to
+                build both the website and mobile application. Partnered with my
+                teammates to design REST APIs and ensure smooth experience in
+                collaboration.
+              </p>
+            </div>
+          </div>
+
+          <!-- Achievement 4 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h3>Database Management System Nptel certification</h3>
+              <p>
+                Earned the DBMS Professional Certificate from Nptel for 8 week
+                course.
+              </p>
+            </div>
+          </div>
+
+          <!-- Achievement 5 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="fas fa-medal"></i>
+              </div>
+              <h3>All Time sports Achiver</h3>
+              <p>
+                Contributed to multiple Medals,Certificates,Shields to My School
+                sports enhancements.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="education">
-    <div class="container">
+      <div class="container">
         <h2 class="section-title">Education</h2>
         <p class="section-subtitle">My Academic Background</p>
 
         <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-icon"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Aug 2022 - May 2026 (Expected)</span>
-                    <h3 class="timeline-title">Bachelor of Technology - Computer Science</h3>
-                    <p class="timeline-subtitle">University of Technology, Tamil Nadu</p>
-                    <p class="timeline-details">
-                        <strong>Key Modules:</strong> Data Structures & Algorithms, Web Development, Database Management Systems, Object-Oriented Programming.
-                    </p>
-                </div>
+          <!-- Item 1 – Left side -->
+          <div class="timeline-item left">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Aug 2022 – May 2026 (Expected)</span>
+              <h3 class="timeline-title">
+                Bachelor of Engineering – Computer Science
+              </h3>
+              <p class="timeline-subtitle">Sathyabama University, Tamil Nadu</p>
+              <p class="timeline-details">
+                <strong>Key Modules:</strong> Data Structures & Algorithms, Web
+                Development, Database Management Systems, Object-Oriented
+                Programming.
+              </p>
             </div>
+          </div>
+
+          <!-- Item 2 – Right side -->
+          <div class="timeline-item right">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Jun 2020 – Apr 2022</span>
+              <h3 class="timeline-title">
+                Higher Secondary Education – Computer Science
+              </h3>
+              <p class="timeline-subtitle">Velammal Bodhi Campus, Tamil Nadu</p>
+              <p class="timeline-details">
+                <strong>Highlights:</strong> Specialized in Biology and
+                Mathematics, achieving a 72.4% overall score.
+              </p>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
     <!-- Gallery Section -->
     <section id="gallery" class="section-bg">
         <div class="container">
             <h2 class="section-title">Photo Gallery</h2>
-            <p class="text-center mb-5">A glimpse into my life beyond coding - my hobbies, interests, and moments that inspire me.</p>
-            
-            <div class="row gallery-container">
-                <div class="col-md-4 mb-4">
-                    <div class="gallery-item">
-                        <img src="https://placehold.co/400x300/6c63ff/FFFFFF?text=Coding+Workshop" alt="Coding Workshop" class="gallery-img">
+            <p class="section-subtitle">
+                A glimpse into my life beyond coding - my hobbies, interests, and moments that inspire me.
+            </p>
+
+            <div class="gallery-slider-container">
+                <div class="gallery-slider-wrapper">
+                    <div class="gallery-slider">
+                        <div class="gallery-slide">
+                            <div class="gallery-item" data-type="image" data-src="assets/images/fools.jpeg">
+                                <img src="assets/images/fools.jpeg" alt="Gallery Image 1" />
+                            </div>
+                        </div>
+                        <div class="gallery-slide">
+                            <div class="gallery-item" data-type="video" data-src="assets/images/expectopatronum.mp4">
+                                <img src="assets/images/wtf.jpeg" alt="Video Thumbnail" />
+                            </div>
+                        </div>
+                        <div class="gallery-slide">
+                            <div class="gallery-item" data-type="image" data-src="assets/images/blue.jpeg">
+                                <img src="assets/images/blue.jpeg" alt="Gallery Image 3" />
+                            </div>
+                        </div>
+                        <div class="gallery-slide">
+                            <div class="gallery-item" data-type="image" data-src="assets/images/isro.jpeg">
+                                <img src="assets/images/isro.jpeg" alt="Gallery Image 4" />
+                            </div>
+                        </div>
+
+                                                <div class="gallery-slide">
+                            <div class="gallery-item" data-type="image" data-src="assets/images/choco.jpeg">
+                                <img src="assets/images/choco.jpeg" alt="Gallery Image 4" />
+                            </div>
+                        </div>
+                                                <div class="gallery-slide">
+                            <div class="gallery-item" data-type="image" data-src="assets/images/hulk.jpeg">
+                                <img src="assets/images/hulk.jpeg" alt="Gallery Image 4" />
+                            </div>
+                        </div>
+                        <div class="gallery-slide">
+                            <div class="gallery-item" data-type="video" data-src="assets/images/us.mp4">
+                                <img src="assets/images/homies.jpeg" alt="Video Thumbnail 2" />
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
+
+                <button class="slider-nav prev" aria-label="Previous Slide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-nav next" aria-label="Next Slide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <div id="gallery-lightbox" class="lightbox">
+        <div class="lightbox-content">
+            </div>
+    </div>
+>
+
     <section id="contact" class="section-bg">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="row">
-                <div class="col-lg-5 mb-5 mb-lg-0">
-                    <h3 class="mb-4">Let's talk about your project!</h3>
-                    <p>I'm currently available for freelance work and open to full-time opportunities. Feel free to reach out if you have any questions or if you'd like to collaborate on a project.</p>
-                    
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h5>Email</h5>
-                                <p>abishek@example.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h5>Location</h5>
-                                <p>Chennai, India</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h5>Phone</h5>
-                                <p>+91 9876543210</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    
-                    <a href="#" class="btn btn-primary mt-4"><i class="fas fa-download me-2"></i>Download Resume</a>
-                    <a href="#" class="btn btn-outline-primary mt-4 ms-2"><i class="fas fa-address-card me-2"></i>Download vCard</a>
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="row">
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <h3 class="mb-4">Let's talk about your project!</h3>
+            <p>
+              I'm currently available for freelance work and open to full-time
+              opportunities. Feel free to reach out if you have any questions or
+              if you'd like to collaborate on a project.
+            </p>
+
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <h5>Email</h5>
+                  <p>tstark0120@gmail.com</p>
                 </div>
-                
-                <div class="col-lg-7">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="name" class="form-label">Your Name</label>
-                                <input type="text" class="form-control" id="name" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="email" class="form-label">Your Email</label>
-                                <input type="email" class="form-control" id="email" required>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" class="form-control" id="subject" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
                 </div>
+                <div>
+                  <h5>Location</h5>
+                  <p>Cuddalore, Tamil Nadu</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                <div>
+                  <h5>Phone</h5>
+                  <p>+91 9597230630</p>
+                </div>
+              </div>
             </div>
+
+            <div class="social-links">
+              <a href="https://github.com/abishek0120" class="social-link"><i class="fab fa-github"></i></a>
+              <a href="www.linkedin.com/in/abishek-bv-7b5971282" class="social-link"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="https://open.spotify.com/user/31g4x772pjg5q6ue3xtylqtzkp4y" class="social-link"><i class="fab fa-spotify"></i></a>
+              <a href="https://www.instagram.com/abishek_0120/" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+
+            <a href="assets/images/Abishek bv.pdf" download="Abishek_BV_Resume.pdf" class="btn btn-primary mt-4"
+              ><i class="fas fa-download me-2"></i>Download Resume</a
+            >
+          </div>
+
+          <div class="col-lg-7">
+            <form id="contact-form">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="name" class="form-label">Your Name</label>
+                  <input type="text" class="form-control" id="name" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label">Your Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>&copy; 2023 Abishek BV. All Rights Reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p>Made with <i class="fas fa-heart text-danger"></i> using HTML, CSS, and JavaScript</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; You May think this is a template, but no i built this shit , brick by brick.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p>
+              Made with <i class="fas fa-heart text-danger"></i> using HTML,
+              CSS, and JavaScript
+            </p>
+          </div>
         </div>
+      </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="theme.js"></script>
-</body>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "Br411ROLMhpC7tEXL",
+        });
+      })();
+    </script>
+  </body>
 </html>
