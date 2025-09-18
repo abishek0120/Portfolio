@@ -866,7 +866,6 @@ body:hover .cursor-outline {
 }
 
 /* === GALLERY SLIDER & LIGHTBOX (IMPROVED) === */
-
 :root {
     --gallery-gap-mobile: 1rem;
     --gallery-gap-desktop: 1.5rem;
@@ -887,7 +886,7 @@ body:hover .cursor-outline {
 /* === GALLERY SLIDER & LIGHTBOX === */
 .gallery-slider-container {
     position: relative;
-    width: 80%;
+    width: 90%; /* CHANGED: Increased from 80% to make the whole section wider */
     margin: 0 auto;
 }
 
