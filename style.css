@@ -1092,3 +1092,147 @@ body:hover .cursor-outline {
         z-index: 10;
     }
 }
+
+
+/* --- Ronaldo Quote Card with CR7 Black & Silver Theme --- */
+.ronaldo-quote-card {
+  /* --- Self-Contained Color Palette (Light Theme Default) --- */
+  --card-background: #ffffff;
+  --card-border: #cccccc;
+  --card-text: #222222;          /* Charcoal Black */
+  --card-accent: #0073e6;        /* Electric Blue */
+  --accent-hover: #005bb5;       /* Darker Blue on hover */
+  --number-color: #aaaaaa;       /* Silver-Gray for the '7' */
+
+  /* --- Layout & Style (Using the variables above) --- */
+  background-color: var(--card-background);
+  background-image: url("assets/images/ronaldo.png");
+  background-position: left -70px top;
+  background-size: 70% auto;
+  background-repeat: no-repeat;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 1.75rem 1.5rem;
+  max-width: 480px;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  z-index: 1;
+}
+
+/* --- Dark Theme Override --- */
+/* This activates when a parent has the class "dark-mode" */
+.dark-mode .ronaldo-quote-card {
+  --card-background: #121212;   /* True Dark */
+  --card-border: #444444;
+  --card-text: #e5e5e5;           /* Light gray text */
+  --card-accent: #00a2ff;         /* Brighter Electric Blue */
+  --accent-hover: #33b5ff;        /* Even brighter blue for hover */
+  --number-color: #555555;        /* Darker, subtle silver */
+}
+
+/* Giant translucent '7' */
+.ronaldo-quote-card::before {
+  content: '7';
+  position: absolute;
+  top: -1.5rem;
+  right: -0.5rem;
+  font-size: 12rem;
+  font-weight: 900;
+  font-family: 'Arial Black', sans-serif;
+  color: var(--number-color);
+  opacity: 0.9; /* INCREASED for better contrast */
+  z-index: -1;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.ronaldo-quote-card blockquote {
+  margin: 0;
+  margin-left: 40%;
+  font-size: 1.25rem;
+  color: var(--card-text);
+  padding: 20px 0;
+  text-align: right;
+  font-style: italic;
+  font-family: 'Georgia', serif;
+  line-height: 1.5;
+  position: relative;
+  z-index: 2;
+}
+
+/* Author text */
+.ronaldo-quote-card figcaption {
+  margin-top: 1rem;
+  text-align: right;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--card-accent);
+  position: relative;
+  z-index: 2;
+}
+
+.ronaldo-quote-card figcaption .icon {
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+/* --- Hover Effects (using variables) --- */
+.ronaldo-quote-card:hover {
+  transform: scale(1.03) rotate(-1deg);
+  border-color: #7e22ce;
+}
+
+.ronaldo-quote-card:hover::before {
+  opacity: 1.35; /* Increased hover opacity */
+  transform: rotate(5deg) scale(1.05);
+}
+
+.ronaldo-quote-card:hover .icon {
+  transform: rotate(360deg) scale(1.5);
+}
+
+/* --- Mobile View --- */
+@media (max-width: 500px) {
+  .ronaldo-quote-card {
+    background-position: right -20px top;
+    background-size: 85% auto;
+    
+  }
+
+  .ronaldo-quote-card blockquote {
+    font-size: 1.15rem;
+    text-align: left;
+    margin-left: 0;
+    
+    padding-right: 50%;
+  }
+
+  .ronaldo-quote-card figcaption {
+    font-size: 1rem;
+    color: var(--accent-hover); /* FIXED: Use variable for theme consistency */
+  }
+
+.ronaldo-quote-card::before {
+    content: '7';
+    position: absolute;
+    top: -1rem;
+    left: -10px;
+    font-size: 14rem;
+    font-weight: 900;
+    font-family: 'Arial Black', sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--card-accent);
+    opacity: 0.5;
+    z-index: -1;
+    transition: transform 0.3s ease, opacity 0.3s ease, -webkit-text-stroke 0.3s ease;
+}
+
+.ronaldo-quote-card:hover::before {
+    transform: rotate(5deg) scale(1.05);
+    opacity: 0.7;
+    -webkit-text-stroke: 4px var(--accent-hover);
+
+}
+
+}
