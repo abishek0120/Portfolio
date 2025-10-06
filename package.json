@@ -1,0 +1,95 @@
+{
+  "projects": [
+    {
+      "image": "assets/images/event.png",
+      "alt": "Evently",
+      "title": "Sathyabama-Event Management",
+      "description": "A complete Event Management System backend built with <strong>Django and Javascript</strong> featuring user authentication, QR code attendance, and calender integration.",
+      "tags": ["Django", "PostgreSQL", "Stripe API"],
+      "liveUrl": "https://event-management-system-mwhu.onrender.com/",
+      "sourceUrl": "https://github.com/abishek0120/Event-management-system/tree/master"
+    },
+    {
+      "image": "assets/images/chat.png",
+      "alt": "Real-Time Chat App",
+      "title": "Real-Time Chat App",
+      "description": "WebSocket-based chat using Django Channels and JQuery(javascript) with features like room creation, typing indicators.",
+      "tags": ["Django Channels", "JQuery Javascript", "WebSockets"],
+      "liveUrl": null,
+      "sourceUrl": "https://github.com/abishek0120/chat_django"
+    },
+    {
+      "image": "assets/images/resume.png",
+      "alt": "AI Resume Builder",
+      "title": "Resume Builder",
+      "description": "Interactive resume builder with using Flask and Javascript As my Professional training project 1.",
+      "tags": ["Django", "Javascript", "MySQL"],
+      "liveUrl": null,
+      "sourceUrl": "https://github.com/abishek0120/Resume-Builder"
+    },
+    {
+      "image": "assets/images/cine.png",
+      "alt": "Cine Match",
+      "title": "Cine Match (movie recomdation system)",
+      "description": "Movie recomending dashboard that Uses machine learning model to find the best movie to watch next.",
+      "tags": ["Django", "Scikit-learn", "Pandas"],
+      "liveUrl": null,
+      "sourceUrl": "https://github.com/abishek0120/movie_recomender_ml_django"
+    },
+    {
+      "image": "assets/images/space.png",
+      "alt": "Space Shooter",
+      "title": "Space Shooter - Pygame",
+      "description": "I have created a space game as my personal project with Pygame and physics.",
+      "tags": ["Python", "Pygame", "Physics"],
+      "liveUrl": null,
+      "sourceUrl": null
+    },
+    {
+      "image": "assets/images/spoty.png",
+      "alt": "Spoty Music",
+      "title": "Spoty Music webiste",
+      "description": "A Music app built with modern CSS, animations, and custom JavaScript for Spotify API.",
+      "tags": ["Flask", "MySQL", "JavaScript"],
+      "liveUrl": null,
+      "sourceUrl": "https://github.com/abishek0120/music_app_flask"
+    }
+  ],
+  "skills": [
+    { "name": "Python", "level": 90 },
+    { "name": "Django", "level": 85 },
+    { "name": "JavaScript", "level": 65 },
+    { "name": "Flask", "level": 75 },
+    { "name": "Numpy", "level": 70 },
+    { "name": "Pandas", "level": 80 },
+    { "name": "Matplotlib", "level": 70 },
+    { "name": "Rest-Api", "level": 90 },
+    { "name": "Git", "level": 70 },
+    { "name": "Ms Excel", "level": 80 },
+    { "name": "Tkinter", "level": 90 },
+    { "name": "Mongo DB", "level": 95 },
+    { "name": "PostgreSQL/MySQL", "level": 95 }
+  ],
+  "experience": [
+    {
+      "date": "Apr 2025 - Aug 2025",
+      "title": "Backend Developer",
+      "company": "nXthive Technologies.",
+      "details": [
+        "Developed and maintained RESTful APIs using <strong>Python</strong> and <strong>Django REST Framework</strong> for a client-facing application.",
+        "Optimized database queries in <strong>PostgreSQL</strong>, resulting in a 15% improvement in API response times.",
+        "integration of <strong>OAuth2</strong> authentication and Email integration for OTP",
+        "Wrote unit tests to ensure code quality and collaborated with the team using Git"
+      ]
+    }
+  ],
+  "gallery": [
+    { "type": "image", "src": "assets/images/fools.jpeg", "thumb": "assets/images/fools.jpeg", "alt": "Gallery Image 1" },
+    { "type": "video", "src": "assets/images/expectopatronum.mp4", "thumb": "assets/images/wtf.jpeg", "alt": "Video Thumbnail" },
+    { "type": "image", "src": "assets/images/blue.jpeg", "thumb": "assets/images/blue.jpeg", "alt": "Gallery Image 3" },
+    { "type": "image", "src": "assets/images/isro.jpeg", "thumb": "assets/images/isro.jpeg", "alt": "Gallery Image 4" },
+    { "type": "image", "src": "assets/images/choco.jpeg", "thumb": "assets/images/choco.jpeg", "alt": "Gallery Image 5" },
+    { "type": "image", "src": "assets/images/hulk.jpeg", "thumb": "assets/images/hulk.jpeg", "alt": "Gallery Image 6" },
+    { "type": "video", "src": "assets/images/us.mp4", "thumb": "assets/images/homies.jpeg", "alt": "Video Thumbnail 2" }
+  ]
+}
